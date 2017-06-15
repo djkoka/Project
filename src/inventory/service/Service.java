@@ -1,7 +1,7 @@
-package oop.service;
+package inventory.service;
 
 
-import oop.model.Device;
+import inventory.model.Device;
 
 /**The interface Service describe list of services of Inventory component
  *

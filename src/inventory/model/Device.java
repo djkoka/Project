@@ -1,4 +1,4 @@
-package oop.model;
+package inventory.model;
 
 import java.util.Date;
 

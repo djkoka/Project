@@ -1,11 +1,11 @@
-package oop.service.impl;
+package inventory.service.impl;
 
-import oop.model.Device;
+import inventory.model.Device;
 
 /**
  * Created by Koka on 15.06.2017.
  */
-public class Service implements oop.service.Service {
+public class Service implements inventory.service.Service {
     @Override
     public void sortByIN(Device[] devices) {
 

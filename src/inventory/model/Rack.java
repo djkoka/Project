@@ -1,4 +1,4 @@
-package oop.model;
+package inventory.model;
 
 /**
  * The interface Rack describe contract of mutable device-holder,

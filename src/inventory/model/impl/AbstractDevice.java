@@ -1,22 +1,26 @@
-package oop.model.impl;
+package inventory.model.impl;
+
+import inventory.model.Device;
 
 import java.util.Date;
 
 /**
  * Created by Koka on 15.06.2017.
  */
-public abstract class AbstractDevice implements oop.model.Device {
+public abstract class AbstractDevice implements Device {
+    protected int in;
+    protected String getType;
+
     @Override
     public int getIn() {
-        return 0;
+        return in;
     }
 
     @Override
     public void setIn(int in) {
-        if(in == 0){
-            int temp = in;
-            if (temp != 0 && temp<0){
-                in = temp;
+        if(in > 0){
+            if(this.in == 0){
+                this.in = in;
             }
         }
     }

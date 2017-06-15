@@ -1,12 +1,11 @@
-package oop.model.impl;
+package inventory.model.impl;
 
-import oop.model.*;
-import oop.model.Device;
+import inventory.model.Device;
 
 /**
  * Created by Koka on 15.06.2017.
  */
-public class Rack implements oop.model.Rack {
+public class Rack implements inventory.model.Rack {
     @Override
     public int getSize() {
         return 0;
