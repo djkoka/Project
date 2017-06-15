@@ -3,7 +3,7 @@ package oop.model;
 import java.util.Date;
 
 /**
- * The interface Device describe contract of mutable POJO,
+ * The interface AbstractDevice describe contract of mutable POJO,
  * witch represent device-entity as object.
  *
  * Created by makovetskyi on 05.10.2016.

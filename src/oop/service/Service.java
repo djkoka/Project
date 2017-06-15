@@ -10,16 +10,16 @@ import oop.model.Device;
 public interface Service {
 
     /**
-     * Sort array of Device-s by identification number.
+     * Sort array of AbstractDevice-s by identification number.
      *
-     * @param devices - array of Device-s, that need to be sorted
+     * @param devices - array of AbstractDevice-s, that need to be sorted
      */
     void sortByIN(Device[] devices);
 
     /**
-     * Filtrate array of Device-s by type
+     * Filtrate array of AbstractDevice-s by type
      *
-     * @param devices - array of Device-s, that need to be filtrated
+     * @param devices - array of AbstractDevice-s, that need to be filtrated
      * @param type - type of Devices, that will remain in the array after filtering
      */
     void filtrateByType(Device[] devices, String type);
