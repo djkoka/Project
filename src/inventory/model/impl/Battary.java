@@ -6,7 +6,7 @@ import inventory.model.Device;
  * Created by Nata on 15.06.2017.
  */
 public class Battary extends AbstractDevice implements Device{
-     int chargeVolume;
+     protected int chargeVolume;
 
     public int getChargeVolume() {
         return chargeVolume;

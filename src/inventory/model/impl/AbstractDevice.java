@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public abstract class AbstractDevice implements Device {
     protected int in;
-    protected String getType;
+    protected String type;
 
     @Override
     public int getIn() {
@@ -27,7 +27,7 @@ public abstract class AbstractDevice implements Device {
 
     @Override
     public String getType() {
-        return null;
+        return type;
     }
 
     @Override

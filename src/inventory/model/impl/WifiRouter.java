@@ -6,7 +6,7 @@ import inventory.model.Device;
  * Created by Nata on 15.06.2017.
  */
 public class WifiRouter extends Router implements Device {
-    String securityProtocol;
+    protected String securityProtocol;
 
     public String getSecurityProtocol() {
         return securityProtocol;
