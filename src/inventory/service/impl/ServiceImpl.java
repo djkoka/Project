@@ -5,10 +5,15 @@ import inventory.model.Device;
 /**
  * Created by Koka on 15.06.2017.
  */
-public class Service implements inventory.service.Service {
+public class ServiceImpl implements inventory.service.Service {
     @Override
     public void sortByIN(Device[] devices) {
-
+        for (int i = 0; i <devices.length; i++) {
+            if (devices[i] == null){
+                int j = devices.length;
+                devices[i] = devices[j];
+            }
+        }
     }
 
     @Override

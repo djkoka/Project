@@ -64,6 +64,7 @@ public class RackArrayImpl implements Rack {
 
     @Override
     public Device getDevByIN(int in) {
+        Device device;
 
         return null;
     }
