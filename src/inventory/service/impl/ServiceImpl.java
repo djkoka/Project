@@ -23,7 +23,10 @@ public class ServiceImpl implements Service {
     @Override
     public void filtrateByType(Device[] devices, String type) {
         for (int i = 0; i < devices.length; i++) {
-            devices[i].getType().compareTo(type);
+            int res = devices[i].getType().compareTo(type);
+            if(res != 0){
+                devices[i] = null;
+            }
         }
     }
 }
