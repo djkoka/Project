@@ -10,6 +10,9 @@ import java.util.Date;
 public abstract class AbstractDevice implements Device {
     protected int in;
     protected String type;
+    protected String manufacturer;
+    protected String model;
+    protected Date productionDate;
 
     @Override
     public int getIn() {
@@ -32,36 +35,37 @@ public abstract class AbstractDevice implements Device {
 
     @Override
     public void setType(String type) {
-
+        this.type = type;
     }
 
     @Override
     public String getManufacturer() {
-        return null;
+        return manufacturer;
     }
 
     @Override
     public void setManufacturer(String manufacturer) {
-
+        this.manufacturer = manufacturer;
     }
 
     @Override
     public String getModel() {
-        return null;
+        return model;
     }
 
     @Override
     public void setModel(String model) {
+        this.model = model;
 
     }
 
     @Override
     public Date getProductionDate() {
-        return null;
+        return productionDate;
     }
 
     @Override
     public void setProductionDate(Date productionDate) {
-
+        this.productionDate = productionDate;
     }
 }

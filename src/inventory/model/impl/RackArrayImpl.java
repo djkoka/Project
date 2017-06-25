@@ -11,6 +11,7 @@ public class RackArrayImpl implements Rack {
     protected int index;
     protected Device[] devices;
     protected int in;
+    protected Device device;
 
     public RackArrayImpl(int size) {
         if(size > 0){
@@ -64,8 +65,10 @@ public class RackArrayImpl implements Rack {
 
     @Override
     public Device getDevByIN(int in) {
-        Device device;
-
-        return null;
+        for (int i = 0; i < devices.length; i++) {
+            if (devices[i].getIn() == in){
+                device = devices[i];
+            }
+        } return device;
     }
 }
