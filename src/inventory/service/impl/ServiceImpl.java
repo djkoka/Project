@@ -13,6 +13,9 @@ public class ServiceImpl implements Service {
     public void sortByIN(Device[] devices) {
         Device[] temp = new Device[devices.length];
         for (int i = 0; i < devices.length; i++) {
+            if (devices[i] == null) {
+
+            }
             int in = devices[i].getIn();
             if (in > 0){
                 temp[i] = devices[i];
@@ -23,8 +26,7 @@ public class ServiceImpl implements Service {
     @Override
     public void filtrateByType(Device[] devices, String type) {
         for (int i = 0; i < devices.length; i++) {
-            int res = devices[i].getType().compareTo(type);
-            if(res != 0){
+            if(devices[i].getType().compareTo(type) != 0){
                 devices[i] = null;
             }
         }
