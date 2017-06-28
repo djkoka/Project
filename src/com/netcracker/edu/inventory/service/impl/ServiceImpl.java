@@ -1,14 +1,11 @@
-package inventory.service.impl;
+package com.netcracker.edu.inventory.service.impl;
 
 
-import inventory.model.Device;
-import inventory.service.Service;
+import com.netcracker.edu.inventory.model.Device;
+import com.netcracker.edu.inventory.service.Service;
 
 import java.util.Arrays;
 
-/**
- * Created by Koka on 15.06.2017.
- */
 public class ServiceImpl implements Service {
 
     @Override

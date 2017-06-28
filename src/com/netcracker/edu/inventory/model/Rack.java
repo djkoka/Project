@@ -1,4 +1,4 @@
-package inventory.model;
+package com.netcracker.edu.inventory.model;
 
 /**
  * The interface Rack describe contract of mutable device-holder,

@@ -1,6 +1,6 @@
-package inventory.model.impl;
+package com.netcracker.edu.inventory.model.impl;
 
-import inventory.model.Device;
+import com.netcracker.edu.inventory.model.Device;
 
 /**
  * Created by Nata on 15.06.2017.

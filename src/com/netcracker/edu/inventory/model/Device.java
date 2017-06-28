@@ -1,4 +1,4 @@
-package inventory.model;
+package com.netcracker.edu.inventory.model;
 
 import java.util.Date;
 
