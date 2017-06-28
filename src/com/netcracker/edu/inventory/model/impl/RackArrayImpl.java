@@ -12,7 +12,7 @@ public class RackArrayImpl implements Rack {
     protected Device device;
 
     public RackArrayImpl(int size) {
-        if(size > 0){
+        if (size >= 0) {
             this.size = size;
             devices = new Device[size];
         }
@@ -27,7 +27,7 @@ public class RackArrayImpl implements Rack {
     public int getFreeSize() {
         int freeSpace = 0;
         for (int i = 0; i < size; i++) {
-            if(devices[i] == null){
+            if (devices[i] == null) {
                 freeSpace++;
             }
         }
@@ -37,8 +37,10 @@ public class RackArrayImpl implements Rack {
     @Override
     public Device getDevAtSlot(int index) {
         Device device = null;
-        if(devices[index] != null){
-            device = devices[index];
+        if (index < size && index >= 0) {
+            if (devices[index] != null) {
+                device = devices[index];
+            }
         }
         return device;
     }
@@ -46,27 +48,34 @@ public class RackArrayImpl implements Rack {
     @Override
     public boolean insertDevToSlot(Device device, int index) {
         boolean empty = false;
-        if (devices[index] == null && device.getIn() > 0) {
-            empty = true;
-            devices[index] = device;
+        if (device != null && index >= 0 && index < size) {
+            if (devices[index] == null & device.getIn() >= 1) {
+                empty = true;
+                devices[index] = device;
+            }
         }
         return empty;
     }
 
     @Override
     public Device removeDevFromSlot(int index) {
-        if (devices[index]!= null){
-            devices[index]= null;
+        Device device = null;
+        if (index < size && index >= 0) {
+            if (devices[index] != null) {
+                device = devices[index];
+                devices[index] = null;
+            }
         }
-        return devices[index];
+        return device;
     }
 
     @Override
     public Device getDevByIN(int in) {
         for (int i = 0; i < devices.length; i++) {
-            if (devices[i].getIn() == in){
-                device = devices[i];
+            if (devices[i] != null && devices[i].getIn() == in) {
+                return devices[i];
             }
-        } return device;
+        }
+        return null;
     }
 }
