@@ -10,26 +10,59 @@ public class ServiceImpl implements Service {
 
     @Override
     public void sortByIN(Device[] devices) {
-        int calNull = 0;
-        int[] arr = new int[devices.length];
+        int countNull = 0;
         for (int i = 0; i < devices.length; i++) {
             if (devices[i] == null) {
-                calNull++;
-            } else {
-                arr[i] = devices[i].getIn();
+                countNull++;
             }
         }
-        Arrays.sort(devices);
-
-/*        for (int i = arr.length - 1; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    int tmp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = tmp;
-                }
+        int j = 0;
+        Device[] devicesWithOutNull = new Device[devices.length - countNull];
+        for (int i = 0; i < devices.length; i++) {
+            if (devices[i] != null) {
+                devicesWithOutNull[j] = devices[i];
+                j++;
             }
-        }*/
+        }
+        j = 0;
+        countNull = 0;
+        for (int i = 0; i < devicesWithOutNull.length; i++) {
+            if (devicesWithOutNull[i].getIn() == 0) {
+                countNull++;
+            }
+        }
+        Device[] devicesWithOutNullAndZero = new Device[devicesWithOutNull.length - countNull];
+        Device[] devicesZeroIn = new Device[countNull];
+        int k = 0;
+        for (int i = 0; i < devicesWithOutNull.length; i++) {
+            if (devicesWithOutNull[i].getIn() != 0) {
+                devicesWithOutNullAndZero[j] = devicesWithOutNull[i];
+                j++;
+            } else {
+                devicesZeroIn[k] = devicesWithOutNull[i];
+                k++;
+            }
+        }
+
+        for (int i = 0; i < devicesWithOutNullAndZero.length - 1; i++) {
+            if (devicesWithOutNullAndZero[i].getIn() > devicesWithOutNullAndZero[i + 1].getIn()) {
+                Device device;
+                device = devicesWithOutNullAndZero[i];
+                devicesWithOutNullAndZero[i] = devicesWithOutNullAndZero[i + 1];
+                devicesWithOutNullAndZero[i + 1] = device;
+            }
+        }
+        for (int i = 0; i < devicesWithOutNullAndZero.length; i++) {
+            devices[i]=devicesWithOutNullAndZero[i];
+        }
+        k=0;
+        for(int i=devicesWithOutNullAndZero.length;i<devicesWithOutNull.length;i++){
+            devices[i]=devicesZeroIn[k];
+            k++;
+        }
+        for (int i=devicesZeroIn.length+devicesWithOutNullAndZero.length;i<devices.length;i++){
+            devices[i]=null;
+        }
     }
 
     @Override
@@ -46,7 +79,7 @@ public class ServiceImpl implements Service {
             if (devices[i] != null) {
                 if (devices[i].getType() == null)
                     devices[i] = null;
-                else if (!devices[i].getType().equals(type) ) {
+                else if (!devices[i].getType().equals(type)) {
                     devices[i] = null;
                 }
             }
