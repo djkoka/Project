@@ -25,7 +25,7 @@ public class ServiceImpl implements Service {
             }
         }
         j = 0;
-        countNull = 0;
+        countNull = 0; 
         for (int i = 0; i < devicesWithOutNull.length; i++) {
             if (devicesWithOutNull[i].getIn() == 0) {
                 countNull++;
@@ -53,15 +53,15 @@ public class ServiceImpl implements Service {
             }
         }
         for (int i = 0; i < devicesWithOutNullAndZero.length; i++) {
-            devices[i]=devicesWithOutNullAndZero[i];
+            devices[i] = devicesWithOutNullAndZero[i];
         }
-        k=0;
-        for(int i=devicesWithOutNullAndZero.length;i<devicesWithOutNull.length;i++){
-            devices[i]=devicesZeroIn[k];
+        k = 0;
+        for (int i = devicesWithOutNullAndZero.length; i < devicesWithOutNull.length; i++) {
+            devices[i] = devicesZeroIn[k];
             k++;
         }
-        for (int i=devicesZeroIn.length+devicesWithOutNullAndZero.length;i<devices.length;i++){
-            devices[i]=null;
+        for (int i = devicesZeroIn.length + devicesWithOutNullAndZero.length; i < devices.length; i++) {
+            devices[i] = null;
         }
     }
 
